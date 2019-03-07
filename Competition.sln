@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Competition", "Competition\Competition.csproj", "{3741C650-CCE3-4FC3-A845-FE6CFFBF99D6}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBase", "DataBase", "{4D0B58C0-A014-4D1E-901B-93855DA1ED5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Competition.Cache", "Competition.Cache\Competition.Cache.csproj", "{6512A285-23D4-4BF3-89A8-691B09D8862C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +19,16 @@ Global
 		{3741C650-CCE3-4FC3-A845-FE6CFFBF99D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3741C650-CCE3-4FC3-A845-FE6CFFBF99D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3741C650-CCE3-4FC3-A845-FE6CFFBF99D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6512A285-23D4-4BF3-89A8-691B09D8862C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6512A285-23D4-4BF3-89A8-691B09D8862C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6512A285-23D4-4BF3-89A8-691B09D8862C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6512A285-23D4-4BF3-89A8-691B09D8862C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6512A285-23D4-4BF3-89A8-691B09D8862C} = {4D0B58C0-A014-4D1E-901B-93855DA1ED5F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {95EE7D3C-239D-491B-845D-B7BC8E09C9B7}
