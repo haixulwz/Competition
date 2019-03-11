@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Competition", "Competition\Competition.csproj", "{3741C650-CCE3-4FC3-A845-FE6CFFBF99D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Competition", "Competition\Competition.csproj", "{3741C650-CCE3-4FC3-A845-FE6CFFBF99D6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBase", "DataBase", "{4D0B58C0-A014-4D1E-901B-93855DA1ED5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Competition.Cache", "Competition.Cache\Competition.Cache.csproj", "{6512A285-23D4-4BF3-89A8-691B09D8862C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Competition.Cache", "Competition.Cache\Competition.Cache.csproj", "{6512A285-23D4-4BF3-89A8-691B09D8862C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebHost", "WebHost\WebHost.csproj", "{FC84A4AD-E1F1-44E8-8785-3A1A69D41297}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{6512A285-23D4-4BF3-89A8-691B09D8862C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6512A285-23D4-4BF3-89A8-691B09D8862C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6512A285-23D4-4BF3-89A8-691B09D8862C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC84A4AD-E1F1-44E8-8785-3A1A69D41297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC84A4AD-E1F1-44E8-8785-3A1A69D41297}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC84A4AD-E1F1-44E8-8785-3A1A69D41297}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC84A4AD-E1F1-44E8-8785-3A1A69D41297}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
