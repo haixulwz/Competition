@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+﻿using IdentityModel;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
@@ -14,37 +15,37 @@ namespace Competition.Host.Start
     {
         public static void Configure(IServiceCollection services, IConfiguration configuration)
         {
-            var authenticationBuilder = services.AddAuthentication();
+            var authenticationBuilder = services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            });
 
             if (bool.Parse(configuration["Authentication:JwtBearer:IsEnabled"]))
             {
                 authenticationBuilder.AddJwtBearer(options =>
                 {
                     options.TokenValidationParameters = new TokenValidationParameters
-                    {
-                        // The signing key must match!
-                        ValidateIssuerSigningKey = true,
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(configuration["Authentication:JwtBearer:SecurityKey"])),
+                {
+                    NameClaimType = JwtClaimTypes.Name,
+                    RoleClaimType = JwtClaimTypes.Role,
 
-                        // Validate the JWT Issuer (iss) claim
                         ValidateIssuer = true,
                         ValidIssuer = configuration["Authentication:JwtBearer:Issuer"],
 
                         // Validate the JWT Audience (aud) claim
                         ValidateAudience = true,
                         ValidAudience = configuration["Authentication:JwtBearer:Audience"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(configuration["Authentication:JwtBearer:SecurityKey"]))
+                };
 
-                        // Validate the token expiry
-                        ValidateLifetime = true,
-
-                        // If you want to allow a certain amount of clock drift, set that here
-                        ClockSkew = TimeSpan.Zero
-                    };
-
-                    options.Events = new JwtBearerEvents
+                    options.Events = new JwtBearerEvents()
                     {
-                        OnMessageReceived = QueryStringTokenResolver,
-                        OnTokenValidated = OnlyOneUserToken
+                        OnMessageReceived = context =>
+                        {
+                            context.Token = context.Request.Query["access_token"];
+                            return Task.CompletedTask;
+                        }
                     };
                 });
             }
@@ -61,7 +62,7 @@ namespace Competition.Host.Start
                 return Task.CompletedTask;
             }
 
-            var qsAuthToken = context.HttpContext.Request.Query["enc_auth_token"].FirstOrDefault();
+            var qsAuthToken = context.HttpContext.Request.Query["access_token"].FirstOrDefault();
             if (qsAuthToken == null)
             {
                 //Cookie value does not matches to querystring value

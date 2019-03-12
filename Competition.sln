@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Competition.Cache", "Compet
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Competition.Host", "Competition.Host\Competition.Host.csproj", "{B0671BF3-3705-4469-9D55-EAEFBE4E925F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{4C014797-285C-4AF3-B5C8-3BA2F1C7E40E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{B0671BF3-3705-4469-9D55-EAEFBE4E925F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B0671BF3-3705-4469-9D55-EAEFBE4E925F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B0671BF3-3705-4469-9D55-EAEFBE4E925F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C014797-285C-4AF3-B5C8-3BA2F1C7E40E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C014797-285C-4AF3-B5C8-3BA2F1C7E40E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C014797-285C-4AF3-B5C8-3BA2F1C7E40E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C014797-285C-4AF3-B5C8-3BA2F1C7E40E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
