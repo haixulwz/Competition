@@ -1,6 +1,7 @@
 ﻿using Competition.Tools.Configuration;
 using Dapper;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using MySql.Data.MySqlClient;
@@ -11,18 +12,18 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
-
+using Microsoft.Extensions.DependencyInjection; 
 namespace Competition.DbHelper
 {
 
     public class DapperHelper
     {
 
-
+         
 
         private readonly IHostingEnvironment _env;
         public   readonly IDbConnection _connection;
-       
+        
         public DapperHelper(IHostingEnvironment  env )
         {           
             _env = env;
@@ -43,6 +44,7 @@ namespace Competition.DbHelper
             {
                 using (IDbConnection conn = _connection)
                 {
+                   
                     // conn.Open();
                     return conn.QueryFirstOrDefault<T>(sql, param );
                 }
