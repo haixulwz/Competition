@@ -59,8 +59,8 @@ namespace Competition.Host.Controllers
                     new Claim(JwtClaimTypes.Issuer,_configuration["Authentication:JwtBearer:Issuer"]),
                     new Claim(JwtClaimTypes.Id, user.Id.ToString()),
                     new Claim(JwtClaimTypes.Name, user.Name),
-                    new Claim(JwtClaimTypes.Email, user.Email),
-                    new Claim(JwtClaimTypes.PhoneNumber, user.PhoneNumber)
+                   // new Claim(JwtClaimTypes.Email, user.Email),
+                   // new Claim(JwtClaimTypes.PhoneNumber, user.PhoneNumber)
                 }),
                 Expires = expiresAt,
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)

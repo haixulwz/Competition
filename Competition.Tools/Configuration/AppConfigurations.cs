@@ -37,7 +37,7 @@ namespace Competition.Tools.Configuration
 
             if (addUserSecrets)
             {
-                builder.AddUserSecrets(typeof(AppConfigurations).GetTypeInfo().Assembly);
+               // builder.AddUserSecrets(typeof(AppConfigurations).GetTypeInfo().Assembly);
             }
 
             return builder.Build();

@@ -64,8 +64,17 @@ namespace Competition.DbHelper
             using (IDbConnection conn = _connection)
             {
                 // conn.Open();
+                try
+                {
+                    return conn.Query<T>(sql, param, transaction: transaction).ToList();
 
-                return conn.Query<T>(sql, param,   transaction: transaction).ToList();
+                }
+                catch (Exception e)
+                {
+
+                    throw e;
+                }
+               
             }
         }
         /// <summary>
@@ -92,7 +101,7 @@ namespace Competition.DbHelper
         /// <param name="param"></param>
         /// <param name="useWriteConn"></param>
         /// <returns></returns>
-        public   async Task<List<T>> ExecuteReaderRetListAsync<T>(string sql, object param = null, bool useWriteConn = false)
+        public   async Task<List<T>> ExecuteReaderRetListAsync<T>(string sql, object param = null )
         {
             using (IDbConnection conn = _connection)
             {
@@ -109,7 +118,7 @@ namespace Competition.DbHelper
         /// <param name="useWriteConn"></param>
         /// <param name="transaction"></param>
         /// <returns></returns>
-        public   int ExecuteSqlInt(string sql, object param = null, bool useWriteConn = false, IDbTransaction transaction = null)
+        public   int ExecuteSqlInt(string sql, object param = null, IDbTransaction transaction = null)
         {
             if (transaction == null)
             {
@@ -133,7 +142,7 @@ namespace Competition.DbHelper
         /// <param name="useWriteConn"></param>
         /// <param name="transaction"></param>
         /// <returns></returns>
-        public   async Task<int> ExecuteSqlIntAsync(string sql, object param = null, bool useWriteConn = false, IDbTransaction transaction = null)
+        public   async Task<int> ExecuteSqlIntAsync(string sql, object param = null , IDbTransaction transaction = null)
         {
             if (transaction == null)
             {
@@ -156,7 +165,7 @@ namespace Competition.DbHelper
         /// <param name="sql">先total后数据分号分割</param>        
         /// <param name="useWriteConn">是否主库</param>
         /// <returns></returns>
-        public   Tuple<int, List<T>> ExecutePageList<T>(string sql, bool useWriteConn = false, object param = null)
+        public   Tuple<int, List<T>> ExecutePageList<T>(string sql,  object param = null)
         {
 
             using (IDbConnection conn =_connection)
