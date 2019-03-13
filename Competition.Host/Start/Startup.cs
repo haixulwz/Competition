@@ -32,6 +32,7 @@ namespace Competition.Host
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<UserStore>();
+            
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             AuthConfig.Configure(services, Configuration);
         }
@@ -50,7 +51,7 @@ namespace Competition.Host
             }
             app.UseAuthentication();
            // app.UseJwtTokenMiddleware();
-            app.UseHttpsRedirection();
+             app.UseHttpsRedirection();
             app.UseMvc();
         }
     }

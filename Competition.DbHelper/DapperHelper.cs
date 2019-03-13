@@ -2,6 +2,7 @@
 using Dapper;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Concurrent;
@@ -20,11 +21,13 @@ namespace Competition.DbHelper
 
 
         private readonly IHostingEnvironment _env;
-        private   readonly IDbConnection _connection;
-        public DapperHelper(IHostingEnvironment  env)
+        public   readonly IDbConnection _connection;
+       
+        public DapperHelper(IHostingEnvironment  env )
         {           
             _env = env;
             _connection = new DbConnectionHelper(env).GetConnection();
+           
         }
         /// <summary>
         ///  执行sql返回一个对象
@@ -33,7 +36,7 @@ namespace Competition.DbHelper
         /// <param name="sql"></param>
         /// <param name="param"></param>
         /// <param name="useWriteConn"></param>
-        /// <returns></returns>
+        /// <returns></returns> 
         public   T ExecuteReaderReturnT<T>(string sql, object param = null,  IDbTransaction transaction = null)
         {
             if (transaction == null)
@@ -64,16 +67,10 @@ namespace Competition.DbHelper
             using (IDbConnection conn = _connection)
             {
                 // conn.Open();
-                try
-                {
+                
                     return conn.Query<T>(sql, param, transaction: transaction).ToList();
 
-                }
-                catch (Exception e)
-                {
-
-                    throw e;
-                }
+                 
                
             }
         }
