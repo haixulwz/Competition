@@ -17,6 +17,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{F2608172
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Competition.Tools", "Competition.Tools\Competition.Tools.csproj", "{E1EAA141-A7FA-459E-9D34-007923B09544}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{BB81DD69-E52C-4B45-BFE0-77D3F3B9720D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Competition.Repository", "Competition.Repository\Competition.Repository.csproj", "{6EC52758-A6C6-4B80-A6F0-0BAEAA24B137}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +47,10 @@ Global
 		{E1EAA141-A7FA-459E-9D34-007923B09544}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1EAA141-A7FA-459E-9D34-007923B09544}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1EAA141-A7FA-459E-9D34-007923B09544}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EC52758-A6C6-4B80-A6F0-0BAEAA24B137}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EC52758-A6C6-4B80-A6F0-0BAEAA24B137}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EC52758-A6C6-4B80-A6F0-0BAEAA24B137}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EC52758-A6C6-4B80-A6F0-0BAEAA24B137}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -51,6 +59,7 @@ Global
 		{6512A285-23D4-4BF3-89A8-691B09D8862C} = {4D0B58C0-A014-4D1E-901B-93855DA1ED5F}
 		{8166C0CD-C72F-4A7C-9855-790ABC5C9E85} = {4D0B58C0-A014-4D1E-901B-93855DA1ED5F}
 		{E1EAA141-A7FA-459E-9D34-007923B09544} = {F2608172-9878-46BB-BFF8-3E5EFBFD1CF1}
+		{6EC52758-A6C6-4B80-A6F0-0BAEAA24B137} = {BB81DD69-E52C-4B45-BFE0-77D3F3B9720D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {95EE7D3C-239D-491B-845D-B7BC8E09C9B7}
