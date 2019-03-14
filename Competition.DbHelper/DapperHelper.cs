@@ -27,7 +27,7 @@ namespace Competition.DbHelper
         public DapperHelper(IHostingEnvironment  env )
         {           
             _env = env;
-            _connection = new DbConnectionHelper(env).GetConnection();
+            _connection = new DbConnectionHelper(env ).GetConnection();
            
         }
         /// <summary>

@@ -1,5 +1,7 @@
 ﻿using Competition.Tools.Configuration;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Hosting.Internal;
+ 
 using Microsoft.Extensions.Configuration;
 using MySql.Data.MySqlClient;
 using System;
@@ -8,6 +10,9 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.DependencyInjection;
+using Competition.Tools;
 
 namespace Competition.DbHelper
 {
@@ -17,10 +22,11 @@ namespace Competition.DbHelper
         private readonly IHostingEnvironment _env;
         private  readonly IConfigurationRoot _appConfiguration;
         private static ConcurrentDictionary<string, IDbConnection> _dbConnectionCache = new ConcurrentDictionary<string, IDbConnection>();
-        public DbConnectionHelper(IHostingEnvironment env)
+        public DbConnectionHelper(IHostingEnvironment env )
         {
             _env = env;
             _appConfiguration = env.GetAppConfiguration();
+           
         }
         public IDbConnection GetConnection(string conn = "")
         {
@@ -33,7 +39,11 @@ namespace Competition.DbHelper
                 return _dbConnectionCache[conn];
             }
 
-            var connSetting = _appConfiguration.GetConnectionString(conn);
+            // var connSetting =  Competition.Tools.ServiceLocator.Instance.GetService(typeof(IConfiguration)) as IConfiguration ; //_appConfiguration.GetConnectionString(conn);
+            var config =  ServiceLocator.Instance.GetService(typeof(IConfiguration)) as IConfiguration;
+            
+            var connSetting = config["ConnectionStrings:Default"];// _appConfiguration.GetConnectionString(conn);
+           
             if (connSetting != null)
             {
                 IDbConnection connection = null;
