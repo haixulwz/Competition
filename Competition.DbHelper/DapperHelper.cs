@@ -69,8 +69,16 @@ namespace Competition.DbHelper
             using (IDbConnection conn = _connection)
             {
                 // conn.Open();
-                
+                try
+                {
                     return conn.Query<T>(sql, param, transaction: transaction).ToList();
+                }
+                catch (Exception e)
+                {
+
+                    throw e;
+                }
+                   
 
                  
                

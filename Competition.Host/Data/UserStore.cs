@@ -26,7 +26,7 @@ namespace Competition.Host.Data
         public User FindUser(string userName, string password)
         {
            // _log.LogError(DapperHelper._connection.ConnectionString+"aa");
-            return DapperHelper.ExecuteReaderReturnList<User>($"select * from sc_user where username='{userName}'").FirstOrDefault();
+            return DapperHelper.ExecuteReaderReturnList<User>($"select * from sc_user where username=@username",new { userName=$"{userName}"}).FirstOrDefault();
         }
     }
 }
