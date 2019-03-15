@@ -15,8 +15,8 @@ namespace Competition.Repository
         private readonly  DbConnection _connection= DbConnectionHelper.GetConnection();
         public int Count()
         {
-             
-            throw new NotImplementedException();
+
+            return Count(null);
         }
 
         public int Count(Expression<Func<TEntity, bool>> predicate)
@@ -32,22 +32,22 @@ namespace Competition.Repository
 
         public Task<int> CountAsync()
         {
-            throw new NotImplementedException();
+            return Task.FromResult<int>(Count());
         }
 
-        public Task<int> CountAsync(Expression<Func<TEntity, bool>> predicate)
+        public   Task<int> CountAsync(Expression<Func<TEntity, bool>> predicate)
         {
-            throw new NotImplementedException();
+            return   Task.FromResult(Count(predicate)) ;
         }
 
         public void Delete(TEntity entity)
         {
-            throw new NotImplementedException();
+            _connection.Delete(entity);
         }
 
         public void Delete(Expression<Func<TEntity, bool>> predicate)
         {
-            throw new NotImplementedException();
+            _connection.Delete(predicate);
         }
 
         public Task DeleteAsync(TEntity entity)

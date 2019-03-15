@@ -11,19 +11,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Competition.Host", "Competi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{4C014797-285C-4AF3-B5C8-3BA2F1C7E40E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Competition.DbHelper", "Competition.DbHelper\Competition.DbHelper.csproj", "{8166C0CD-C72F-4A7C-9855-790ABC5C9E85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Competition.DbHelper", "Competition.DbHelper\Competition.DbHelper.csproj", "{8166C0CD-C72F-4A7C-9855-790ABC5C9E85}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{F2608172-9878-46BB-BFF8-3E5EFBFD1CF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Competition.Tools", "Competition.Tools\Competition.Tools.csproj", "{E1EAA141-A7FA-459E-9D34-007923B09544}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Competition.Tools", "Competition.Tools\Competition.Tools.csproj", "{E1EAA141-A7FA-459E-9D34-007923B09544}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repository", "Repository", "{BB81DD69-E52C-4B45-BFE0-77D3F3B9720D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Competition.Repository", "Competition.Repository\Competition.Repository.csproj", "{6EC52758-A6C6-4B80-A6F0-0BAEAA24B137}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Competition.Repository", "Competition.Repository\Competition.Repository.csproj", "{6EC52758-A6C6-4B80-A6F0-0BAEAA24B137}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DapperExtensions", "DapperExtensions\DapperExtensions.csproj", "{FD2EE8C9-3EFC-4F9C-B4F4-FCFF0F8880C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication2", "WebApplication2\WebApplication2.csproj", "{71546B96-953A-4F65-BAFB-7563F23E9569}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication2", "WebApplication2\WebApplication2.csproj", "{71546B96-953A-4F65-BAFB-7563F23E9569}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{072CA2E2-CAFF-4616-B8FF-F51D9B048648}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{71546B96-953A-4F65-BAFB-7563F23E9569}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71546B96-953A-4F65-BAFB-7563F23E9569}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71546B96-953A-4F65-BAFB-7563F23E9569}.Release|Any CPU.Build.0 = Release|Any CPU
+		{072CA2E2-CAFF-4616-B8FF-F51D9B048648}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{072CA2E2-CAFF-4616-B8FF-F51D9B048648}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{072CA2E2-CAFF-4616-B8FF-F51D9B048648}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{072CA2E2-CAFF-4616-B8FF-F51D9B048648}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
