@@ -16,18 +16,18 @@ using Microsoft.Extensions.DependencyInjection;
 namespace Competition.DbHelper
 {
 
-    public class DapperHelper
+    public static class DapperHelper
     {
 
          
 
-        private readonly IHostingEnvironment _env;
-        public   readonly IDbConnection _connection;
+       
+        public  static  readonly IDbConnection _connection;
         
-        public DapperHelper(IHostingEnvironment  env )
+        static DapperHelper(  )
         {           
-            _env = env;
-            _connection = new DbConnectionHelper(env ).GetConnection();
+            
+            _connection =  DbConnectionHelper.GetConnection();
            
         }
         /// <summary>
@@ -38,7 +38,7 @@ namespace Competition.DbHelper
         /// <param name="param"></param>
         /// <param name="useWriteConn"></param>
         /// <returns></returns> 
-        public   T ExecuteReaderReturnT<T>(string sql, object param = null,  IDbTransaction transaction = null)
+        public  static  T ExecuteReaderReturnT<T>(string sql, object param = null,  IDbTransaction transaction = null)
         {
             if (transaction == null)
             {
@@ -64,7 +64,7 @@ namespace Competition.DbHelper
         /// <param name="param"></param>
         /// <param name="useWriteConn"></param>
         /// <returns></returns>
-        public   List<T> ExecuteReaderReturnList<T>(string sql, object param = null , IDbTransaction transaction = null)
+        public static List<T> ExecuteReaderReturnList<T>(string sql, object param = null , IDbTransaction transaction = null)
         {
             using (IDbConnection conn = _connection)
             {
@@ -84,7 +84,7 @@ namespace Competition.DbHelper
         /// <param name="param"></param>
         /// <param name="useWriteConn"></param>
         /// <returns></returns>
-        public   async Task<T> ExecuteReaderRetTAsync<T>(string sql, object param = null )
+        public static async Task<T> ExecuteReaderRetTAsync<T>(string sql, object param = null )
         {
             using (IDbConnection conn = _connection)
             {
@@ -100,7 +100,7 @@ namespace Competition.DbHelper
         /// <param name="param"></param>
         /// <param name="useWriteConn"></param>
         /// <returns></returns>
-        public   async Task<List<T>> ExecuteReaderRetListAsync<T>(string sql, object param = null )
+        public static async Task<List<T>> ExecuteReaderRetListAsync<T>(string sql, object param = null )
         {
             using (IDbConnection conn = _connection)
             {
@@ -117,7 +117,7 @@ namespace Competition.DbHelper
         /// <param name="useWriteConn"></param>
         /// <param name="transaction"></param>
         /// <returns></returns>
-        public   int ExecuteSqlInt(string sql, object param = null, IDbTransaction transaction = null)
+        public static int ExecuteSqlInt(string sql, object param = null, IDbTransaction transaction = null)
         {
             if (transaction == null)
             {
@@ -141,7 +141,7 @@ namespace Competition.DbHelper
         /// <param name="useWriteConn"></param>
         /// <param name="transaction"></param>
         /// <returns></returns>
-        public   async Task<int> ExecuteSqlIntAsync(string sql, object param = null , IDbTransaction transaction = null)
+        public static async Task<int> ExecuteSqlIntAsync(string sql, object param = null , IDbTransaction transaction = null)
         {
             if (transaction == null)
             {
@@ -164,7 +164,7 @@ namespace Competition.DbHelper
         /// <param name="sql">先total后数据分号分割</param>        
         /// <param name="useWriteConn">是否主库</param>
         /// <returns></returns>
-        public   Tuple<int, List<T>> ExecutePageList<T>(string sql,  object param = null)
+        public static Tuple<int, List<T>> ExecutePageList<T>(string sql,  object param = null)
         {
 
             using (IDbConnection conn =_connection)

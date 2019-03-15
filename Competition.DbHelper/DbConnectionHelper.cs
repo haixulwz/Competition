@@ -19,17 +19,12 @@ namespace Competition.DbHelper
   public  class DbConnectionHelper
     {
         public const string DefaultConnectionString = "Default";
-        private readonly IHostingEnvironment _env;
-        private  readonly IConfigurationRoot _appConfiguration;
+       
         private static ConcurrentDictionary<string, IDbConnection> _dbConnectionCache = new ConcurrentDictionary<string, IDbConnection>();
-        public DbConnectionHelper(IHostingEnvironment env )
+      
+        public static IDbConnection GetConnection(string conn = "")
         {
-            _env = env;
-            _appConfiguration = env.GetAppConfiguration();
-           
-        }
-        public IDbConnection GetConnection(string conn = "")
-        {
+            
             if (string.IsNullOrEmpty(conn))
             {
                 conn = DefaultConnectionString;
@@ -38,16 +33,13 @@ namespace Competition.DbHelper
             {
                 return _dbConnectionCache[conn];
             }
+            var config = ServiceLocator.Instance.GetService(typeof(IConfiguration)) as IConfiguration;
 
-            // var connSetting =  Competition.Tools.ServiceLocator.Instance.GetService(typeof(IConfiguration)) as IConfiguration ; //_appConfiguration.GetConnectionString(conn);
-            var config =  ServiceLocator.Instance.GetService(typeof(IConfiguration)) as IConfiguration;
-            
-            var connSetting = config["ConnectionStrings:Default"];// _appConfiguration.GetConnectionString(conn);
-           
+            var connSetting = config["ConnectionStrings:Default"];
             if (connSetting != null)
             {
                 IDbConnection connection = null;
-                var dalType = GetDalType(_appConfiguration.GetConnectionString("DataType"));
+                var dalType = GetDalType(config["ConnectionStrings:DataType"]);
                 switch (dalType)
                 {
                     case DalType.MsSql:
@@ -72,8 +64,8 @@ namespace Competition.DbHelper
             }
 
             throw new Exception($"{conn} not exist");
-
         }
+      
         public static DalType GetDalType(string providerName)
         {
             switch (providerName)
@@ -87,7 +79,7 @@ namespace Competition.DbHelper
                 case "MySql.Data.MySqlClient":
                     return DalType.MySql;
                 default:
-                    throw new Exception($"Not Support Now [{providerName}]");
+                    return DalType.MySql;
             }
         }
     }
