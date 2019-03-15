@@ -13,6 +13,7 @@ using System.Text;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Competition.Tools;
+using System.Data.Common;
 
 namespace Competition.DbHelper
 {
@@ -20,9 +21,9 @@ namespace Competition.DbHelper
     {
         public const string DefaultConnectionString = "Default";
        
-        private static ConcurrentDictionary<string, IDbConnection> _dbConnectionCache = new ConcurrentDictionary<string, IDbConnection>();
+        private static ConcurrentDictionary<string,  DbConnection> _dbConnectionCache = new ConcurrentDictionary<string,  DbConnection>();
       
-        public static IDbConnection GetConnection(string conn = "")
+        public static  DbConnection GetConnection(string conn = "")
         {
             
             if (string.IsNullOrEmpty(conn))
@@ -38,7 +39,7 @@ namespace Competition.DbHelper
             var connSetting = config["ConnectionStrings:Default"];
             if (connSetting != null)
             {
-                IDbConnection connection = null;
+                 DbConnection connection = null;
                 var dalType = GetDalType(config["ConnectionStrings:DataType"]);
                 switch (dalType)
                 {

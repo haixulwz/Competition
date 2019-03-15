@@ -19,9 +19,6 @@ namespace Competition.DbHelper
     public static class DapperHelper
     {
 
-         
-
-       
         public  static  readonly IDbConnection _connection;
         
         static DapperHelper(  )
