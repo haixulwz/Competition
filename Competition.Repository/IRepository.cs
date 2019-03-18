@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Competition.Repository
 {
-    interface IRepository<TEntity, TPrimaryKey> where TEntity : class
+  public  interface IRepository<TEntity, TPrimaryKey> where TEntity : class
     { 
          /// <summary>
          /// 主键数据
