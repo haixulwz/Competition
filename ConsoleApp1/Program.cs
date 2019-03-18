@@ -1,4 +1,5 @@
 ﻿using System;
+ 
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -8,25 +9,28 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
          {
-        //    Console.WriteLine("主线程启动");
-        //    //Task.Run启动一个线程
-        //    //Task启动的是后台线程，要在主线程中等待后台线程执行完毕，可以调用Wait方法
-        //    //Task task = Task.Factory.StartNew(() => { Thread.Sleep(1500); Console.WriteLine("task启动"); });
-        //    Task task = Task.Run(() => {
-        //        Thread.Sleep(1500);
-        //        Console.WriteLine("task启动");
-        //    });
-        //    Thread.Sleep(300);
-        //    //task.Wait();
-        //    Console.WriteLine("主线程结束");
-        //    Console.Read();
+            
+            //Console.WriteLine("主线程启动");
+            ////Task.Run启动一个线程
+            ////Task启动的是后台线程，要在主线程中等待后台线程执行完毕，可以调用Wait方法
+            ////Task task = Task.Factory.StartNew(() => { Thread.Sleep(1500); Console.WriteLine("task启动"); });
+            //Task task = Task.Run(() =>
+            //{
+            //    Thread.Sleep(1500);
+            //    Console.WriteLine("task启动");
+            //});
+            //Thread.Sleep(300);
+            ////task.Wait();
+            //Console.WriteLine("主线程结束");
+            //    Console.Read();
 
-         Console.WriteLine("-------主线程启动-------");
-         Task<int> task = GetStrLengthAsync();
-         Console.WriteLine("主线程继续执行");
-          Console.WriteLine("Task返回的值" + task.Result);
-         Console.WriteLine("-------主线程结束-------");
-         Console.Read();
+            Console.WriteLine("-------主线程启动-------");
+            Task<int> task = GetStrLengthAsync();
+            Console.WriteLine("主线程继续执行");
+             Console.WriteLine("Task返回的值" + task.Result);
+            Console.WriteLine("-------主线程结束-------");
+           
+            Console.Read();
         }
         static Task<string> GetString()
         {

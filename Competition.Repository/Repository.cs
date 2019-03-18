@@ -13,6 +13,7 @@ namespace Competition.Repository
     public class Repository<TEntity, TPrimaryKey> : IRepository<TEntity, TPrimaryKey> where TEntity : class
     {
         private readonly  DbConnection _connection= DbConnectionHelper.GetConnection();
+       
         public int Count()
         {
 
@@ -52,7 +53,9 @@ namespace Competition.Repository
 
         public Task DeleteAsync(TEntity entity)
         {
-            throw new NotImplementedException();
+            Delete(entity);
+            return Task.FromResult (0);
+           //  throw new Exception("");
         }
 
         public Task DeleteAsync(Expression<Func<TEntity, bool>> predicate)
