@@ -7,7 +7,9 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using DapperExtensions;
- 
+using Dapper;
+using System.Linq;
+
 namespace Competition.Repository
 {
     public class Repository<TEntity, TPrimaryKey> : IRepository<TEntity, TPrimaryKey> where TEntity : class
@@ -60,28 +62,34 @@ namespace Competition.Repository
 
         public Task DeleteAsync(Expression<Func<TEntity, bool>> predicate)
         {
-            throw new NotImplementedException();
+            Delete(predicate);
+            return Task.FromResult(0);
+          //  throw new NotImplementedException();
         }
 
         public int Execute(string query, object parameters = null)
         {
-            throw new NotImplementedException();
+            return _connection.Execute(query, parameters);
         }
 
         public Task<int> ExecuteAsync(string query, object parameters = null)
         {
-            throw new NotImplementedException();
+            return Task.FromResult(Execute(query,parameters));
+            //throw new NotImplementedException();
         }
 
         public TEntity FirstOrDefault(Expression<Func<TEntity, bool>> predicate)
         {
-            throw new NotImplementedException();
+            IPredicate pg = predicate.ExecuteFilter<TEntity, TPrimaryKey>();
+           return   _connection.GetList<TEntity>(pg).FirstOrDefault();
+            //return _connection.Query<TEntity>()
+          // throw new NotImplementedException();
         }
  
 
         public TEntity FirstOrDefault(TPrimaryKey id)
         {
-            throw new NotImplementedException();
+            return _connection.Get<TEntity>(id);
         }
 
         public Task<TEntity> FirstOrDefaultAsync(Expression<Func<TEntity, bool>> predicate)
