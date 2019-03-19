@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.lib", "Sample.lib\Sa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.lib2", "Sample.lib2\Sample.lib2.csproj", "{DC385DF4-1EA0-430A-9E16-D72863FF1726}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSConsole", "DSConsole\DSConsole.csproj", "{7A846F39-C4A7-4FEA-AF42-C0AC377EA6C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,10 @@ Global
 		{DC385DF4-1EA0-430A-9E16-D72863FF1726}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC385DF4-1EA0-430A-9E16-D72863FF1726}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC385DF4-1EA0-430A-9E16-D72863FF1726}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A846F39-C4A7-4FEA-AF42-C0AC377EA6C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A846F39-C4A7-4FEA-AF42-C0AC377EA6C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A846F39-C4A7-4FEA-AF42-C0AC377EA6C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A846F39-C4A7-4FEA-AF42-C0AC377EA6C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
