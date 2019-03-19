@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Competition.Host.Data;
 using Competition.Host.Start;
+using Competition.Repository;
 using Competition.Tools;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -33,7 +34,7 @@ namespace Competition.Host
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<UserStore>();
-            
+           // services.AddTransient<IRepository<TEntity>,Repository.Repository>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             AuthConfig.Configure(services, Configuration);
         }

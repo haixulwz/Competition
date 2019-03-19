@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Competition.DbHelper\Competition.DbHelper.csproj" />
+    <ProjectReference Include="..\Competition.Repository\Competition.Repository.csproj" />
   </ItemGroup>
 
 </Project>

@@ -21,9 +21,9 @@ namespace Competition.DbHelper
     {
         public const string DefaultConnectionString = "Default";
        
-        private static ConcurrentDictionary<string,  DbConnection> _dbConnectionCache = new ConcurrentDictionary<string,  DbConnection>();
+        private static ConcurrentDictionary<string,  IDbConnection> _dbConnectionCache = new ConcurrentDictionary<string,  IDbConnection>();
       
-        public static  DbConnection GetConnection(string conn = "")
+        public static  IDbConnection GetConnection(string conn = "")
         {
             
             if (string.IsNullOrEmpty(conn))

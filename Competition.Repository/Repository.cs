@@ -14,8 +14,15 @@ namespace Competition.Repository
 {
     public class Repository<TEntity, TPrimaryKey> : IRepository<TEntity, TPrimaryKey> where TEntity : class
     {
-        private readonly  DbConnection _connection= DbConnectionHelper.GetConnection();
-       
+        private readonly IDbConnection _connection;//= DbConnectionHelper.GetConnection();
+        public Repository(IDbConnection connection=null)
+        {
+            _connection = connection;
+            if (_connection == null  )
+            {
+                _connection = DbConnectionHelper.GetConnection();
+            }
+        }
         public int Count()
         {
 
