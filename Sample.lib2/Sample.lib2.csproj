@@ -8,4 +8,9 @@
     <PackageReference Include="Dapper" Version="1.60.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Competition.DbHelper\Competition.DbHelper.csproj" />
+    <ProjectReference Include="..\Competition.Tools\Competition.Tools.csproj" />
+  </ItemGroup>
+
 </Project>
