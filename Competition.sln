@@ -39,6 +39,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LogCore", "LogCore", "{DFF9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.Batching", "Logging.Batching\Logging.Batching.csproj", "{C189D2EA-5166-4B40-9DAC-8E5A791D256E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptionMonitor", "OptionMonitor\OptionMonitor.csproj", "{FA2B0F86-9A66-46B3-A978-AA03859881F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +99,10 @@ Global
 		{C189D2EA-5166-4B40-9DAC-8E5A791D256E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C189D2EA-5166-4B40-9DAC-8E5A791D256E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C189D2EA-5166-4B40-9DAC-8E5A791D256E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA2B0F86-9A66-46B3-A978-AA03859881F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA2B0F86-9A66-46B3-A978-AA03859881F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA2B0F86-9A66-46B3-A978-AA03859881F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA2B0F86-9A66-46B3-A978-AA03859881F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
