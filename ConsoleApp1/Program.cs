@@ -1,5 +1,6 @@
 ﻿using System;
- 
+using System.IO;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -9,7 +10,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
          {
-            
+
             //Console.WriteLine("主线程启动");
             ////Task.Run启动一个线程
             ////Task启动的是后台线程，要在主线程中等待后台线程执行完毕，可以调用Wait方法
@@ -24,13 +25,27 @@ namespace ConsoleApp1
             //Console.WriteLine("主线程结束");
             //    Console.Read();
 
-            Console.WriteLine("-------主线程启动-------");
-            Task<int> task = GetStrLengthAsync();
-            Console.WriteLine("主线程继续执行");
-             Console.WriteLine("Task返回的值" + task.Result);
-            Console.WriteLine("-------主线程结束-------");
-           
+            //Console.WriteLine("-------主线程启动-------");
+            //Task<int> task = GetStrLengthAsync();
+            //Console.WriteLine("主线程继续执行");
+            // Console.WriteLine("Task返回的值" + task.Result);
+            //Console.WriteLine("-------主线程结束-------");
+            RollFiles();
             Console.Read();
+        }
+        protected static void RollFiles()
+        {
+            
+                var files = new DirectoryInfo(@"D:\Git\zero-logging\test\Zero.Logging.Tests\bin\Debug\netcoreapp2.2\logs")
+                    .GetFiles( )
+                    .OrderByDescending(f => f.Name)
+                    .Skip(2);
+
+                foreach (var item in files)
+                {
+                    item.Delete();
+                }
+            
         }
         static Task<string> GetString()
         {

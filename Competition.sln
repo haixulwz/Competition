@@ -35,6 +35,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.lib2", "Sample.lib2\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSConsole", "DSConsole\DSConsole.csproj", "{7A846F39-C4A7-4FEA-AF42-C0AC377EA6C2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LogCore", "LogCore", "{DFF919F3-EA5B-44F1-A17B-3C7805115A39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.Batching", "Logging.Batching\Logging.Batching.csproj", "{C189D2EA-5166-4B40-9DAC-8E5A791D256E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -89,6 +93,10 @@ Global
 		{7A846F39-C4A7-4FEA-AF42-C0AC377EA6C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A846F39-C4A7-4FEA-AF42-C0AC377EA6C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A846F39-C4A7-4FEA-AF42-C0AC377EA6C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C189D2EA-5166-4B40-9DAC-8E5A791D256E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C189D2EA-5166-4B40-9DAC-8E5A791D256E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C189D2EA-5166-4B40-9DAC-8E5A791D256E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C189D2EA-5166-4B40-9DAC-8E5A791D256E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -101,6 +109,7 @@ Global
 		{FD2EE8C9-3EFC-4F9C-B4F4-FCFF0F8880C3} = {4D0B58C0-A014-4D1E-901B-93855DA1ED5F}
 		{5F47C67A-9BB9-4CB9-A71A-7C43E080F4EC} = {F715F71F-35F4-410A-8384-17B7072CF8DA}
 		{DC385DF4-1EA0-430A-9E16-D72863FF1726} = {F715F71F-35F4-410A-8384-17B7072CF8DA}
+		{C189D2EA-5166-4B40-9DAC-8E5A791D256E} = {DFF919F3-EA5B-44F1-A17B-3C7805115A39}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {95EE7D3C-239D-491B-845D-B7BC8E09C9B7}
