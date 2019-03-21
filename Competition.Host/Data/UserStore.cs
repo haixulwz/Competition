@@ -1,6 +1,8 @@
 ﻿using Competition.DbHelper;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -25,7 +27,10 @@ namespace Competition.Host.Data
         }
         public User FindUser(string userName, string password)
         {
-            _log.LogError(DapperHelper._connection.ConnectionString+"aa");
+         //   var serviceCollection = new ServiceCollection();
+            //serviceCollection.Configure<MyOptions>(o=>o.Name="Bob1" );
+          ////  var serviceProvider = serviceCollection.BuildServiceProvider();
+          //  _log.LogError(serviceProvider.GetService<IConfiguration>()["ConnectionStrings:Default"]);
             return DapperHelper.ExecuteReaderReturnList<User>($"select * from sc_user where username=@username",new { userName=$"{userName}"}).FirstOrDefault();
         }
     }
