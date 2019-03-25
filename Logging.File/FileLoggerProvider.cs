@@ -15,6 +15,7 @@ namespace Logging.File
         private readonly string _path;
         private readonly string _fileName;
         private readonly long? _maxFileSize;
+        
         public FileLoggerProvider(IOptionsMonitor<FileLoggerOptions> options):base(options)
         {
 
@@ -46,18 +47,18 @@ namespace Logging.File
         }
         protected void RollFiles()
         {
-            if (_maxRetainedFiles > 0)
-            {
-                var files = new DirectoryInfo(_path)
-                    .GetFiles(_fileName + "*")
-                    .OrderByDescending(f => f.Name)
-                    .Skip(_maxRetainedFiles.Value);
+            //if (_maxRetainedFiles > 0)
+            //{
+            //    var files = new DirectoryInfo(_path)
+            //        .GetFiles(_fileName + "*")
+            //        .OrderByDescending(f => f.Name)
+            //        .Skip(_maxRetainedFiles.Value);
 
-                foreach (var item in files)
-                {
-                    item.Delete();
-                }
-            }
+            //    foreach (var item in files)
+            //    {
+            //        item.Delete();
+            //    }
+            //}
         }
     }
 }

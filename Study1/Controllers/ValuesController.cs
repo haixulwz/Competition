@@ -24,13 +24,13 @@ namespace Study1.Controllers
         {
             testOption = t;
             _options = myoptions;
-            
+            Logger.Info("what a asdfasd");
             //_options = options ;
             //_logger = logger;
             //_logger.LogError("test");
 
             //  change= _options.OnChange(a =>_logger.LogError(a.DefaultValue)  );
-              
+
         }
         
         // GET api/values
