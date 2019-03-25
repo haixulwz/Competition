@@ -41,7 +41,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logging.Batching", "Logging
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionMonitor", "OptionMonitor\OptionMonitor.csproj", "{FA2B0F86-9A66-46B3-A978-AA03859881F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.File", "Logging.File\Logging.File.csproj", "{850A92FC-4E36-4EC0-9A25-B32CD8804CAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logging.File", "Logging.File\Logging.File.csproj", "{850A92FC-4E36-4EC0-9A25-B32CD8804CAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Study1", "Study1\Study1.csproj", "{30E06575-1A9B-4FE1-98ED-D93FD8081D57}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -109,6 +111,10 @@ Global
 		{850A92FC-4E36-4EC0-9A25-B32CD8804CAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{850A92FC-4E36-4EC0-9A25-B32CD8804CAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{850A92FC-4E36-4EC0-9A25-B32CD8804CAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30E06575-1A9B-4FE1-98ED-D93FD8081D57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30E06575-1A9B-4FE1-98ED-D93FD8081D57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30E06575-1A9B-4FE1-98ED-D93FD8081D57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30E06575-1A9B-4FE1-98ED-D93FD8081D57}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
