@@ -11,6 +11,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Competition.DbHelper\Competition.DbHelper.csproj" />
     <ProjectReference Include="..\Competition.Tools\Competition.Tools.csproj" />
+    <ProjectReference Include="..\DapperExtensions\DapperExtensions.csproj" />
   </ItemGroup>
 
 </Project>

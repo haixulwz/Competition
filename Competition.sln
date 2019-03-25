@@ -29,17 +29,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp1", "ConsoleApp1\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CN-DDD", "CN-DDD", "{F715F71F-35F4-410A-8384-17B7072CF8DA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.lib", "Sample.lib\Sample.lib.csproj", "{5F47C67A-9BB9-4CB9-A71A-7C43E080F4EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample.lib", "Sample.lib\Sample.lib.csproj", "{5F47C67A-9BB9-4CB9-A71A-7C43E080F4EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.lib2", "Sample.lib2\Sample.lib2.csproj", "{DC385DF4-1EA0-430A-9E16-D72863FF1726}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample.lib2", "Sample.lib2\Sample.lib2.csproj", "{DC385DF4-1EA0-430A-9E16-D72863FF1726}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSConsole", "DSConsole\DSConsole.csproj", "{7A846F39-C4A7-4FEA-AF42-C0AC377EA6C2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DSConsole", "DSConsole\DSConsole.csproj", "{7A846F39-C4A7-4FEA-AF42-C0AC377EA6C2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LogCore", "LogCore", "{DFF919F3-EA5B-44F1-A17B-3C7805115A39}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.Batching", "Logging.Batching\Logging.Batching.csproj", "{C189D2EA-5166-4B40-9DAC-8E5A791D256E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logging.Batching", "Logging.Batching\Logging.Batching.csproj", "{C189D2EA-5166-4B40-9DAC-8E5A791D256E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OptionMonitor", "OptionMonitor\OptionMonitor.csproj", "{FA2B0F86-9A66-46B3-A978-AA03859881F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OptionMonitor", "OptionMonitor\OptionMonitor.csproj", "{FA2B0F86-9A66-46B3-A978-AA03859881F5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logging.File", "Logging.File\Logging.File.csproj", "{850A92FC-4E36-4EC0-9A25-B32CD8804CAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -103,6 +105,10 @@ Global
 		{FA2B0F86-9A66-46B3-A978-AA03859881F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA2B0F86-9A66-46B3-A978-AA03859881F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA2B0F86-9A66-46B3-A978-AA03859881F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{850A92FC-4E36-4EC0-9A25-B32CD8804CAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{850A92FC-4E36-4EC0-9A25-B32CD8804CAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{850A92FC-4E36-4EC0-9A25-B32CD8804CAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{850A92FC-4E36-4EC0-9A25-B32CD8804CAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -116,6 +122,7 @@ Global
 		{5F47C67A-9BB9-4CB9-A71A-7C43E080F4EC} = {F715F71F-35F4-410A-8384-17B7072CF8DA}
 		{DC385DF4-1EA0-430A-9E16-D72863FF1726} = {F715F71F-35F4-410A-8384-17B7072CF8DA}
 		{C189D2EA-5166-4B40-9DAC-8E5A791D256E} = {DFF919F3-EA5B-44F1-A17B-3C7805115A39}
+		{850A92FC-4E36-4EC0-9A25-B32CD8804CAD} = {DFF919F3-EA5B-44F1-A17B-3C7805115A39}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {95EE7D3C-239D-491B-845D-B7BC8E09C9B7}
