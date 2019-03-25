@@ -7,6 +7,11 @@ namespace Study1
 {
     public class MyOptions
     {
+        public MyOptions()
+        {
+
+        }
         public string DefaultValue { get; set; }
+        public string NoInConfig { get; set; }
     }
 }
