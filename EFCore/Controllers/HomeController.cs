@@ -10,6 +10,11 @@ namespace EFCore.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly BloggingContext _context;
+        public HomeController(BloggingContext context)
+        {
+            _context = context;
+        }
         public IActionResult Index()
         {
             return View();
