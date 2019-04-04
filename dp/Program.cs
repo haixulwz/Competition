@@ -1,4 +1,5 @@
 ﻿using dp.Decorator;
+using dp.proxydp;
 using dp.simplefactory;
 using dp.Stratege;
 using System;
@@ -24,12 +25,27 @@ namespace dp
             //Console.Write(gm); 
             #endregion
 
-            ConcreteComponent c = new ConcreteComponent();
-            ConcreteDecorator a = new ConcreteDecorator();
-            ConcreteDecoratorB b = new ConcreteDecoratorB();
-            a.SetComponent(c);
-            b.SetComponent(a);
-            b.Operation(); 
+            #region MyRegion
+            //ConcreteComponent c = new ConcreteComponent();
+            //ConcreteDecorator a = new ConcreteDecorator();
+            //ConcreteDecoratorB b = new ConcreteDecoratorB();
+            //a.SetComponent(c);
+            //b.SetComponent(a);
+            //b.Operation();
+
+
+            //Person person = new Person("小菜");
+            //Kuzi kuzi = new Kuzi();
+            //Tshirt tshirt = new Tshirt();
+            //kuzi.SetPerson(person);
+            //tshirt.SetPerson(kuzi);
+            //tshirt.Show(); 
+            #endregion
+            SchoolGirl g = new SchoolGirl("jjjj");
+            //Pursuit p = new Pursuit(g);
+            proxydp.Proxy px = new proxydp.Proxy(p);
+            px.Give1();
+            px.Give2();
             Console.ReadLine();
         }
     }
