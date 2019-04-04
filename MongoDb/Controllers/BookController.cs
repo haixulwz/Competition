@@ -33,8 +33,8 @@ namespace MongoDb.Controllers
             }
             return book;
         }
-        [HttpPost]
-        public ActionResult<Book> Create([FromBody] Book book)
+        [HttpPost("test")]
+        public ActionResult<Book> Create( Book book)
         {
             _bookService.Create(book);
             return CreatedAtAction("GetBook",new { id=book.Id},book);
