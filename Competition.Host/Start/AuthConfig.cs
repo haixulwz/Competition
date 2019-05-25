@@ -25,6 +25,7 @@ namespace Competition.Host.Start
             {
                 authenticationBuilder.AddJwtBearer(options =>
                 {
+                   
                     options.TokenValidationParameters = new TokenValidationParameters
                 {
                     NameClaimType = JwtClaimTypes.Name,

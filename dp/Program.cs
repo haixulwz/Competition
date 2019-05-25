@@ -43,9 +43,9 @@ namespace dp
             #endregion
             SchoolGirl g = new SchoolGirl("jjjj");
             //Pursuit p = new Pursuit(g);
-            proxydp.Proxy px = new proxydp.Proxy(p);
-            px.Give1();
-            px.Give2();
+            // proxydp.Proxy px = new proxydp.Proxy(p);
+            //px.Give1();
+            //px.Give2();
             Console.ReadLine();
         }
     }
