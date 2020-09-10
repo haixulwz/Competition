@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.329
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataBase", "DataBase", "{4D0B58C0-A014-4D1E-901B-93855DA1ED5F}"
 EndProject
@@ -95,7 +95,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApplication9", "WebAppli
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Id4Qstart", "Id4Qstart", "{27F9E36C-06B0-4C9C-B62A-9FFC75D3195B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Id4Server", "Id4Server\Id4Server.csproj", "{932B4AEF-BA06-4CB2-8B2D-608C02FC7FDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Id4Server", "Id4Server\Id4Server.csproj", "{932B4AEF-BA06-4CB2-8B2D-608C02FC7FDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp3", "ConsoleApp3\ConsoleApp3.csproj", "{DAB023D3-60B8-4C07-BA60-6DF67FF58557}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication10", "WebApplication10\WebApplication10.csproj", "{06CC4DCD-D658-4E99-B2E3-7ACA20BC4D9E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SCHOOL", "SCHOOL", "{4FFE7813-5CC1-4550-A1F2-58421492FD27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MockSchoolManagement", "MockSchoolManagement\MockSchoolManagement.csproj", "{796D0F2C-6A50-4258-890F-BCD6EEF03D70}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -243,6 +251,18 @@ Global
 		{932B4AEF-BA06-4CB2-8B2D-608C02FC7FDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{932B4AEF-BA06-4CB2-8B2D-608C02FC7FDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{932B4AEF-BA06-4CB2-8B2D-608C02FC7FDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DAB023D3-60B8-4C07-BA60-6DF67FF58557}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAB023D3-60B8-4C07-BA60-6DF67FF58557}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAB023D3-60B8-4C07-BA60-6DF67FF58557}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAB023D3-60B8-4C07-BA60-6DF67FF58557}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06CC4DCD-D658-4E99-B2E3-7ACA20BC4D9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06CC4DCD-D658-4E99-B2E3-7ACA20BC4D9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06CC4DCD-D658-4E99-B2E3-7ACA20BC4D9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06CC4DCD-D658-4E99-B2E3-7ACA20BC4D9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{796D0F2C-6A50-4258-890F-BCD6EEF03D70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{796D0F2C-6A50-4258-890F-BCD6EEF03D70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{796D0F2C-6A50-4258-890F-BCD6EEF03D70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{796D0F2C-6A50-4258-890F-BCD6EEF03D70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -272,6 +292,7 @@ Global
 		{DFBCE129-907B-4F45-81E2-EB7AD5425E9E} = {486AC45D-246F-4924-AD8F-E8858B537361}
 		{E7FC4074-CA66-42FF-A552-ED18F940EB00} = {486AC45D-246F-4924-AD8F-E8858B537361}
 		{932B4AEF-BA06-4CB2-8B2D-608C02FC7FDE} = {27F9E36C-06B0-4C9C-B62A-9FFC75D3195B}
+		{796D0F2C-6A50-4258-890F-BCD6EEF03D70} = {4FFE7813-5CC1-4550-A1F2-58421492FD27}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {95EE7D3C-239D-491B-845D-B7BC8E09C9B7}

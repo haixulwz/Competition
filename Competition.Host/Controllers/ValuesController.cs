@@ -17,8 +17,9 @@ namespace Competition.Host.Controllers
         [Authorize]
         public ActionResult<IEnumerable<string>> Get()
         {
-            var a = HttpContext.User;
-            return new string[] { "value1", "value2" };
+            var a = HttpContext.User.Identity.Name;
+            
+            return new string[] { a, "value2" };
         }
 
         // GET api/values/5

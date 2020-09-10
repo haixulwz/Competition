@@ -7,9 +7,9 @@ namespace Competition.Host.Data
 {
     public class User
     {
-        public string Id { get; set; }
+        public string Cust_Id { get; set; }
 
-        public string Name { get; set; }
+        public string Cust_Name { get; set; }
 
         public string Email { get; set; }
 

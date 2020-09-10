@@ -25,18 +25,21 @@ namespace Competition.Host.Start
             {
                 authenticationBuilder.AddJwtBearer(options =>
                 {
-                   
-                    options.TokenValidationParameters = new TokenValidationParameters
-                {
-                    NameClaimType = JwtClaimTypes.Name,
-                    RoleClaimType = JwtClaimTypes.Role,
 
-                        ValidateIssuer = true,
-                        ValidIssuer = configuration["Authentication:JwtBearer:Issuer"],
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        NameClaimType = JwtClaimTypes.Name,
+
+                        //  RoleClaimType = JwtClaimTypes.Role,
+
+                        ValidateIssuer = false,
+                        // ValidIssuer = configuration["Authentication:JwtBearer:Issuer"],
 
                         // Validate the JWT Audience (aud) claim
-                        ValidateAudience = true,
-                        ValidAudience = configuration["Authentication:JwtBearer:Audience"],
+                        ValidateAudience = false,
+                        //  ValidAudience = configuration["Authentication:JwtBearer:Audience"],
+                        //ValidateLifetime = true,
+                       // ClockSkew = TimeSpan.FromSeconds(4),
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(configuration["Authentication:JwtBearer:SecurityKey"]))
                 };
 

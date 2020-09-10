@@ -15,10 +15,8 @@ namespace Competition.Host.Data
     {
        
         private readonly ILogger<UserStore> _log;
-        private static List<User> _users = new List<User>() {
-        new User {  Id="1", Name="alice", Password="alice", Email="alice@gmail.com", PhoneNumber="18800000001", Birthday=DateTime.Now },
-        new User {  Id="1", Name="bob", Password="bob", Email="bob@gmail.com", PhoneNumber="18800000002", Birthday=DateTime.Now.AddDays(1) }
-    };
+        private static List<User> _users = new List<User>();
+    
         public UserStore(   ILogger<UserStore>  log )
         {
            
@@ -31,7 +29,7 @@ namespace Competition.Host.Data
             //serviceCollection.Configure<MyOptions>(o=>o.Name="Bob1" );
           ////  var serviceProvider = serviceCollection.BuildServiceProvider();
           //  _log.LogError(serviceProvider.GetService<IConfiguration>()["ConnectionStrings:Default"]);
-            return DapperHelper.ExecuteReaderReturnList<User>($"select * from sc_user where username=@username",new { userName=$"{userName}"}).FirstOrDefault();
+            return DapperHelper.ExecuteReaderReturnList<User>($"select * from bypal_cust_info where cust_loadname=@username",new { userName=$"{userName}"}).FirstOrDefault();
         }
     }
 }

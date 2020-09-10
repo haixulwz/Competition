@@ -39,28 +39,29 @@ namespace Competition.Host.Controllers
                 token_type = "Bearer",
                 profile = new
                 {
-                    sid = user.Id,
-                    name = user.Name,
+                    sid = user.Cust_Id,
+                    name = user.Cust_Name,
                     auth_time = new DateTimeOffset(authTime).ToUnixTimeSeconds(),
                     expires_at = new DateTimeOffset(expiresAt).ToUnixTimeSeconds()
                 }
             });
         }
-        private string CreateAccessToken(User user,DateTime? expiresAt)
+        private string CreateAccessToken(User user,DateTime  expiresAt)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_configuration["Authentication:JwtBearer:SecurityKey"]);
-            
+            var  expires_at = new DateTimeOffset(expiresAt).ToUnixTimeSeconds();
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(JwtClaimTypes.Audience,_configuration["Authentication:JwtBearer:Audience"]),
-                    new Claim(JwtClaimTypes.Issuer,_configuration["Authentication:JwtBearer:Issuer"]),
-                    new Claim(JwtClaimTypes.Id, user.Id.ToString()),
-                    new Claim(JwtClaimTypes.Name, user.Name),
-                   // new Claim(JwtClaimTypes.Email, user.Email),
-                   // new Claim(JwtClaimTypes.PhoneNumber, user.PhoneNumber)
+                    new Claim(JwtClaimTypes.Audience, _configuration["Authentication:JwtBearer:Audience"]),
+                    new Claim(JwtClaimTypes.Issuer, _configuration["Authentication:JwtBearer:Issuer"]),
+                    new Claim(JwtClaimTypes.Id, user.Cust_Id.ToString()),
+                    new Claim(JwtClaimTypes.Name, user.Cust_Name),
+                    new Claim(JwtClaimTypes.Expiration, expires_at.ToString())
+                    // new Claim(JwtClaimTypes.Email, user.Email),
+                    // new Claim(JwtClaimTypes.PhoneNumber, user.PhoneNumber)
                 }),
                 Expires = expiresAt,
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
