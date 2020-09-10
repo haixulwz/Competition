@@ -4,10 +4,23 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UserSecretsId>1132939e-0d55-4756-833a-6ecdcc9d601a</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <AspNetCoreHostingModel> InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Student.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.10.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Student.cshtml" />
   </ItemGroup>
 
 </Project>
