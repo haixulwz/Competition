@@ -24,7 +24,8 @@ namespace MockSchoolManagement
         public void ConfigureServices(IServiceCollection services)
         {
             //services.AddMvc(c => c.EnableEndpointRouting = false);
-            services.AddControllersWithViews(c=>c.EnableEndpointRouting=false) ;
+            services.AddControllersWithViews( ) ;
+           
             services.AddSingleton<IStudentRepository, StudentRepository>();
         }
 
@@ -35,9 +36,16 @@ namespace MockSchoolManagement
             {
                  app.UseDeveloperExceptionPage();
             }
-          //  app.UseDefaultFiles();
+           app.UseDefaultFiles();
             app.UseStaticFiles();
-            app.UseMvcWithDefaultRoute();
+            app.UseRouting();
+            app.UseEndpoints(
+                endpoints =>
+                {
+                    endpoints.MapControllers();
+                });
+            //    app.UseMvcWithDefaultRoute();
+         //   app.UseMvc();
             app.Use(async(context,next)=> {
 
                 logger.LogInformation(  "start1 " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
@@ -50,11 +58,12 @@ namespace MockSchoolManagement
                 await next();
                 logger.LogInformation("end2 " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
             });
-            app.Run(async(context)=> {
-              //  throw new Exception("发生了异常");
-                await context.Response.WriteAsync(env.EnvironmentName);
-                logger.LogInformation("end3 " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-            });
+            //app.Run(async(context)=> {
+            //  //  throw new Exception("发生了异常");
+            //    await context.Response.WriteAsync(env.EnvironmentName);
+            //    logger.LogInformation("end3 " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            //});
+          
             //app.UseRouting();
 
             //app.UseEndpoints(endpoints =>

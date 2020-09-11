@@ -1,0 +1,22 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model  StudentDetailViewModel
+@{ 
+
+    Layout =   "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "详情";
+}
+ 
+    @Model.PageTitle
+    <table>
+
+        <tr><td>id</td><td>@Model.Student.Id</td></tr>
+        <tr><td>姓名</td><td>@Model.Student.Name</td></tr>
+        <tr><td>专业</td><td>@Model.Student.Major</td></tr>
+    </table>
+ @section Scripts{ 
+   <script src="/js/aa.js" ></script>
+ }

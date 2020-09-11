@@ -11,6 +11,7 @@ namespace MockSchoolManagement.Model
     {
         Student GetStudent(int id);
         void Save(Student student);
+        IEnumerable<Student> GetAll();
 
     }
 
@@ -25,6 +26,12 @@ namespace MockSchoolManagement.Model
             
             };
         }
+
+        public IEnumerable<Student> GetAll()
+        {
+            return students;
+        }
+
         public Student GetStudent(int id)
         {
             return students.FirstOrDefault(x=>x.Id==id);

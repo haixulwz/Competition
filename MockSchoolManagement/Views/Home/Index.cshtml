@@ -3,7 +3,7 @@
 *@
 @{
 }
-@model MockSchoolManagement.Models.Student
+@model IEnumerable<MockSchoolManagement.Models.Student> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,10 +12,11 @@
 </head>
 <body>
     <table>
-
-       <tr><td>id</td><td>@Model.Id</td></tr>
-            <tr><td>姓名</td><td>@Model.Name</td></tr>
-            <tr><td>专业</td><td>@Model.Major</td></tr> 
+        @foreach (var student in Model) { 
+       <tr><td>id</td><td>@student.Id</td></tr>
+            <tr><td>姓名</td><td>@student.Name</td></tr>
+            <tr><td>专业</td><td>@student.Major</td></tr> 
+        }
     </table>
 </body>
 </html>
