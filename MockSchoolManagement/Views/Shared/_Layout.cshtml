@@ -4,10 +4,12 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width"/>
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    <div>aaa
+    <div class="container"> 
         @RenderBody()
     </div>
     @RenderSection("Scripts",required:false)
