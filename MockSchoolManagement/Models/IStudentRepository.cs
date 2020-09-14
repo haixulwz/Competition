@@ -12,7 +12,10 @@ namespace MockSchoolManagement.Model
         Student GetStudent(int id);
         void Save(Student student);
         IEnumerable<Student> GetAll();
+        Student Add(Student student);
 
+        Student Delete(int id);
+        Student Update(Student student);
     }
 
     public class StudentRepository : IStudentRepository
@@ -20,11 +23,25 @@ namespace MockSchoolManagement.Model
         private IList<Student> students;
         public StudentRepository() {
             students = new List<Student>() { 
-                new Student(){ Id=1,Name="张珊",Major="English"},
-                new Student(){ Id=2,Name="李四",Major="Chemistery"},
-                new Student(){ Id=3,Name="wangwu",Major="History"}
+                //new Student(){ Id=1,Name="张珊",Major="English"},
+                //new Student(){ Id=2,Name="李四",Major="Chemistery"},
+                //new Student(){ Id=3,Name="wangwu",Major="History"}
             
             };
+        }
+
+        public Student Add(Student student)
+        {
+            var id = students.Max(x => x.Id) + 1;
+            student.Id = id;
+            students.Add(student);
+            return student;
+
+        }
+
+        public Student Delete(int id)
+        {
+            throw new NotImplementedException();
         }
 
         public IEnumerable<Student> GetAll()
@@ -42,6 +59,11 @@ namespace MockSchoolManagement.Model
         {
             students.Add(student);
             //throw new NotImplementedException();
+        }
+
+        public Student Update(Student student)
+        {
+            throw new NotImplementedException();
         }
     }
 }

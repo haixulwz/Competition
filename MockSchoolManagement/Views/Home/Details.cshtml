@@ -18,7 +18,7 @@
                 <h2> @Model.Student.Name</h2>
             </div>
             <div class="card-body text-center">
-                <img  class="card-img-top" src="~/images/noimage.png"/>
+                <img  class="card-img-top" src="~/images/@(Model.Student.PhotoPath??"noimage.png")"/>
                 <h4>id @Model.Student.Id</h4>
                 <h4>专业 @Model.Student.Major</h4>
 

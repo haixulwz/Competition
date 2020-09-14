@@ -1,0 +1,35 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+
+    ViewBag.Title = "创建学生信息";
+}
+@model MockSchoolManagement.Models.ViewModel.StudentCreateViewModel
+@inject MockSchoolManagement.Model.IStudentRepository _istudentRepository
+<link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+<link href="~/css/site.css" rel="stylesheet" />
+<form asp-controller="Home" asp-action="Create" method="post" enctype="multipart/form-data">
+    <div>
+        <label asp-for="Name"></label><input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div>
+        <label asp-for="Email"></label><input asp-for="Email" />
+    </div>
+    <div>
+        <label asp-for="Major"></label>
+        <select asp-for="Major" asp-items="Html.GetEnumSelectList<MarjorEnum>()" id="Major" name="Major">
+        </select>
+    </div>
+    <div>
+        <div>
+            <input asp-for="Photo" multiple />
+            <label>请选择图片</label>
+        </div>
+    </div>
+    <button class="btn btn-block" type="submit">创建</button>
+    @*<div>@_istudentRepository.GetAll().Count()</div>*@
+
+    
+</form>
