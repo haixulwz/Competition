@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using MockSchoolManagement.Model;
@@ -31,16 +32,28 @@ namespace MockSchoolManagement.Controllers
             return View(students);
         }
         [Route("Home/Details/{id?}")]
-        public ViewResult Details(int id = 1)
+        public IActionResult Details(int id = 1)
         {
+
+            if (studentRepository.GetStudent(id) == null)
+            {
+                Response.StatusCode = 404;
+                return new NotFoundResult();
+           // return      RedirectToRoute(new { controller = "Error", action = "NotFound", code = "404" });
+
+
+            }
+            
             StudentDetailViewModel vm = new StudentDetailViewModel()
             {
 
                 Student = studentRepository.GetStudent(id),
+                
                 PageTitle = "学生详情"
             };
-            return View(vm);
 
+            return View(vm);
+           
         }
         [HttpGet]
         [Route("Home/Create")]
@@ -55,11 +68,15 @@ namespace MockSchoolManagement.Controllers
             if (ModelState.IsValid)
             {
                 string uniqu = null;
-                if (model.Photo!=null) {
-                    string uploadPathFolder = Path.Combine(webHostEnvironment.WebRootPath, "images");
-                    uniqu = Guid.NewGuid() + "_" + model.Photo.FileName;
-                    string filePath = Path.Combine(uploadPathFolder,uniqu);
-                    model.Photo.CopyTo(new FileStream(filePath,FileMode.Create));
+                if (model.Photos!=null && model.Photos.Count>0) {
+                    foreach (IFormFile Photo in model.Photos)
+                    {
+                        string uploadPathFolder = Path.Combine(webHostEnvironment.WebRootPath, "images");
+                        uniqu = Guid.NewGuid() + "_" +  Photo.FileName;
+                        string filePath = Path.Combine(uploadPathFolder, uniqu);
+                         Photo.CopyTo(new FileStream(filePath, FileMode.Create));
+                    }
+                  
                 }
 
                 Student s = new Student
@@ -73,6 +90,21 @@ namespace MockSchoolManagement.Controllers
                 return RedirectToAction("Details", new { id = s.Id });
             }
             return View();
+        }
+
+        [HttpGet]
+        [Route("Home/Edit")]
+        public ViewResult Edit(int id) {
+            Student s = studentRepository.GetStudent(id);
+            StudentEditViewModel vm = new StudentEditViewModel
+            {
+                Id = s.Id,
+                Name = s.Name,
+                Email = s.Email,
+                Major = s.Major,
+                ExistPhotoPath = s.PhotoPath
+            };
+            return View(vm);
         }
     }
 }

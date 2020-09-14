@@ -2,7 +2,7 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
-
+  
     ViewBag.Title = "创建学生信息";
 }
 @model MockSchoolManagement.Models.ViewModel.StudentCreateViewModel
@@ -24,12 +24,26 @@
     </div>
     <div>
         <div>
-            <input asp-for="Photo" multiple />
-            <label>请选择图片</label>
+            <input asp-for="Photos" multiple class="custom-file-input" />
+            <label class="custom-file-label">请选择图片</label>
         </div>
     </div>
     <button class="btn btn-block" type="submit">创建</button>
-    @*<div>@_istudentRepository.GetAll().Count()</div>*@
+    <div>@_istudentRepository.GetAll().Count()</div>
+    <script src="~/lib/twitter-bootstrap/js/jquery/jquery.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(".custom-file-input").on("change", function () {
+                var fileLable = $(this).next(".custom-file-label");
+                    var files = $(this)[0].files;
+                if (files.length > 1) {
+                    fileLable.html("已经选择了" + files.length + "张图片")
+                }
+                else {
+                    fileLable.html(files[0].name)
+                }
+            })//onchange-end
+        })
+    </script>
 
-    
 </form>

@@ -38,10 +38,15 @@ namespace MockSchoolManagement
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env,ILogger<Startup> logger)
         {
-            if (env.IsDevelopment())
-            {
-                 app.UseDeveloperExceptionPage();
-            }
+            //if (env.IsDevelopment())
+            //{
+            //    app.UseDeveloperExceptionPage();
+            //}
+            //else
+            //{
+              app.UseExceptionHandler( "/Error/Index");
+            //}
+            app.UseStatusCodePagesWithReExecute("/Error/NotFound/{0}");
            app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseRouting();

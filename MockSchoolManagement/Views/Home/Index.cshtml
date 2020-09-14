@@ -12,27 +12,34 @@
 </head>
 <body>
     <div class="card-deck">
-        @foreach (var student in Model) { 
-        <div class="card m-12">
-            <div class="card-header">
-                <h2> @student.Name</h2>
-            </div>
-            <div class="card-body text-center">
-                <img class="card-img-top" src="~/images/@student.PhotoPath" />
-                <h4>id @student.Id</h4>
-                <h4>专业 @student.Major</h4>
+        @foreach (var student in Model)
+        {
+            <div class="card m-12">
+                <div class="card-header">
+                    <h2> @student.Name</h2>
+                </div>
+                <div class="card-body text-center">
+                    <img class="card-img-top" src="~/images/@student.PhotoPath" />
+                    <h4>id @student.Id</h4>
+                    <h4>专业 @student.Major.GetDisplayName()</h4>
+
+                </div>
+                <div class="card-footer text-center">
+                    <a class="btn btn-primary" asp-controller="Home" asp-action="Details" asp-route-id="@student.Id">查看</a>
+                    <a href="#" class="btn btn-primary">返回</a>
+                    <a asp-controller="Home" asp-action="Edit" asp-route-id="@student.Id" class="btn btn-primary">编辑</a>
+                    <a href="#" class="btn btn-danger">s删除</a>
+                </div>
 
             </div>
-            <div class="card-footer text-center">
-                <a  class="btn btn-primary" asp-controller="Home" asp-action="Details" asp-route-id="@student.Id">查看</a>
-                <a href="#" class="btn btn-primary">返回</a>
-                <a href="#" class="btn btn-primary">编辑</a>
-                <a href="#" class="btn btn-danger">s删除</a>
-            </div>
 
-        </div>
-       
         }
     </div>
+    @section Scripts{
+
+        $(document).ready(function(
+
+        ))
+    }
 </body>
 </html>
